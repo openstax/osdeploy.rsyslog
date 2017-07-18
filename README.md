@@ -24,7 +24,7 @@ Example Playbook
 ```
     - hosts: servers
       roles:
-        - role: openstax.rsyslog
+        - role: osdeploy.rsyslog
           rsyslog_hostname: "{{ hostvars[inventory_hostname] }}"
 ```
 
