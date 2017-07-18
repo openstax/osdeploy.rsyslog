@@ -6,7 +6,7 @@ Very simple `rsyslog` configuration role.  Based on [current rsyslog role in cnx
 Requirements
 ------------
 
-Ansible > 2.
+Ansible > 2, Ubuntu
 
 Role Variables
 --------------
@@ -21,9 +21,12 @@ No dependencies, but `osdeploy.papertrail` and `osdeploy.graylog` will depend on
 Example Playbook
 ----------------
 
+```
     - hosts: servers
       roles:
-         - { role: openstax.rsyslog, rsyslog_hostname: inventory_hostname }
+        - role: openstax.rsyslog
+          rsyslog_hostname: "{{ hostvars[inventory_hostname] }}"
+```
 
 License
 -------

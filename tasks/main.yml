@@ -1,10 +1,10 @@
 ---
 - name: Install latest stable rsyslogd
-  apt: >
-    pkg=rsyslog
-    state=installed
-    update_cache=yes
-    state=latest
+  apt:
+    pkg:    rsyslog
+    state:  installed
+    update_cache: yes
+    state:  latest
   tags:
     - rsyslog
     - rsyslog-install
