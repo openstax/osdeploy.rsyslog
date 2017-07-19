@@ -1,5 +1,6 @@
 ---
 - name: Install latest stable rsyslogd
+  become: yes
   apt:
     pkg:    rsyslog
     state:  installed
@@ -12,7 +13,7 @@
 - name: rsyslog conf template
   become: yes
   template:
-    src: etc/rsyslog.conf
+    src: etc/rsyslog.conf.j2
     dest: /etc/rsyslog.conf
     mode: 0644
   tags:
@@ -22,7 +23,7 @@
 - name: rsyslog default conf template
   become: yes
   template:
-    src: etc/rsyslog.d/50-default.conf
+    src: etc/rsyslog.d/50-default.conf.j2
     dest: /etc/rsyslog.d/50-default.conf
     mode: 0644
   notify: restart rsyslog
