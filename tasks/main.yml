@@ -3,7 +3,6 @@
   become: yes
   apt:
     pkg:    rsyslog
-    state:  installed
     update_cache: yes
     state:  latest
   tags:
